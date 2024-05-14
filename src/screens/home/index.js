@@ -6,106 +6,78 @@ import GlobalStyle from '../../assets/css/style';
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.homeWrapper}>
-      <View style={styles.midSec}>
-        <Image source={imagePath.HOME_BACK_IMAGE} />
-        <Text style={styles.heading}>
-          Find The Right Job, {"\n"} For
-          <Text style={styles.subHeading}> Yourself.</Text>
+    <View style={styles.container}>
+      <View
+        style={{
+          padding: 20,
+          flexGrow: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: '#fff',
+        }}>
+        <Image
+          source={imagePath.DELIVERY_ILLUSTRATION}
+          style={styles.deliveryImage}
+        />
+        <Text style={styles.heading}>Welcome</Text>
+        <Text style={styles.subHeading}>
+          Get ready to streamline your deliveries and
+        </Text>
+        <Text style={styles.subHeading}>
+          optimize your routes. Let's hit the road!"
         </Text>
       </View>
-      <View style={styles.container}>
-        <Text style={styles.text}>
-          Explore dental career options at Ondonte.{"\n"}Choose between permanent and temporary positions to fit your needs.
-        </Text>
-        
-      </View>
 
-      <View style={{ ...styles.midSec, ...styles.bottomSec }}>
-        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate("login")}>
-          <Text style={styles.loginTxt}>Login</Text>
-          <Image source={imagePath.leftArrow}/>
-        </TouchableOpacity>
-
-
-        <TouchableOpacity
-          style={{ ...styles.loginBtn, ...styles.register }}
-          onPress={() => navigation.navigate("register")}
-        >
-          <Text style={{ ...styles.loginTxt, ...styles.registerTxt }}>
-            Sign Up
-          </Text>
-         <Image source={imagePath.whiteRightArrow}/>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity style={styles.driverButton} onPress={() => navigation.navigate('login')}>
+        <Text style={styles.buttonText}>Continue as Driver</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.technicianButton}>
+        <Text style={styles.buttonText}>Continue as Technician</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  registerTxt: {
-    color: 'white',
+  container: {
+    backgroundColor: '#fff',
+    flexGrow: 1,
   },
-  register: {
-    backgroundColor: '#654cfd',
-    marginTop: 15,
-  },
-  loginTxt: {
-    color: 'black',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: 18,
-    fontWeight:'500',
-    lineHeight:20
-  },
-  loginBtn: {
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'center',
-    backgroundColor: '#ffe254',
-    padding: 15,
-    borderRadius: 8,
-  },
-  midSec: {
-    marginTop: 'auto',
-  },
-  bottomSec: {
-    marginBottom: 40,
-    width: '100%',
-    paddingHorizontal: 20,
-  },
-  homeWrapper: {
-    flex: 1,
-    // justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
+  deliveryImage: {
+    height: 220,
+    width: 320,
+    marginBottom: '5%',
   },
   heading: {
-    fontSize: 26,
-    fontWeight: 'bold',
-    color: 'black',
-    paddingHorizontal: 20,
-    textAlign: 'center',
-    marginTop: 20,
+    color: '#000',
+    fontWeight: '500',
+    fontSize: 20,
+    marginBottom: '4%',
+    fontFamily: 'DM Sans',
   },
   subHeading: {
-    color: '#654cfd',
-    fontSize: 26,
+    color: '#505050',
+    fontSize: 14,
+    fontWeight: '400',
   },
-  container: {
-    
+  buttonText: {color: '#FFF', fontSize: 16, fontWeight: '500'},
+  driverButton: {
+    marginBottom: '4%',
+    padding: 15,
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '7%',
-    width:'76%'
+    marginHorizontal: '5%',
+    backgroundColor: '#BC562D',
   },
-  text: {
-    textAlign: 'center',
-    color: 'gray',
-    lineHeight:24,
-    fontSize:14,
-    fontWeight:'400',
-    fontFamily:'Ubuntu'
+  technicianButton: {
+    marginBottom: '4%',
+    padding: 15,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: '5%',
+    backgroundColor: '#263238',
   },
 });
 
